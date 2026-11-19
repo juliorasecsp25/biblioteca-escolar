@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biblioteca Escolar Online</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1 id="nome-biblioteca">Biblioteca Escolar Online</h1>
+    <p>Consulte os livros disponíveis no acervo.</p>
+    <a href="login.html" style="color:white">Área administrativa</a>
+  </header>
+ 
+  <main>
+    <section>
+      <h2>Pesquisar livros</h2>
+      <label for="termo">Digite título, autor ou assunto</label>
+      <input id="termo" type="search" placeholder="Ex.: literatura">
+      <button id="buscar">Buscar</button>
+      <button id="limpar" class="secundario">Limpar</button>
+      <p id="mensagem" class="mensagem" aria-live="polite">Carregando catálogo...</p>
+    </section>
+ 
+    <section>
+      <h2>Acervo</h2>
+      <div id="lista-livros" class="livros"></div>
+    </section>
+  </main>
+ 
+  <!-- Primeiro carregamos a biblioteca do Supabase. -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Depois criamos a conexão e executamos a busca. -->
+  <script src="js/config.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>

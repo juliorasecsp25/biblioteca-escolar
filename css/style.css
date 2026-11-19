@@ -1,0 +1,55 @@
+/* Estas são as cores iniciais. Depois, o grupo pode escolher outras. */
+:root {
+  --cor-principal: #24496b;
+  --cor-fundo: #f4f6f8;
+  --cor-texto: #222222;
+  --cor-borda: #d7dde3;
+}
+ 
+/* Deixa os elementos com um tamanho organizado e usa uma fonte simples. */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+}
+header {
+  background: var(--cor-principal);
+  color: white;
+  padding: 18px;
+}
+main {
+  width: min(1000px, 94%);
+  margin: 24px auto;
+}
+section, .cartao {
+  background: white;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+label { display: block; margin: 10px 0 5px; font-weight: bold; }
+input, select, textarea {
+  width: 100%; padding: 10px; border: 1px solid var(--cor-borda);
+  border-radius: 5px; font: inherit;
+}
+button, .botao {
+  padding: 10px 14px; border: 0; border-radius: 5px;
+  background: var(--cor-principal); color: white; cursor: pointer;
+  margin-top: 8px;
+}
+button.secundario { background: #657786; }
+button.perigo { background: #a83232; }
+.livros { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 14px; }
+.mensagem { padding: 10px; margin: 10px 0; border-radius: 5px; background: #eaf2f8; }
+.oculto { display: none; }
+table { width: 100%; border-collapse: collapse; background: white; }
+th, td { padding: 9px; border: 1px solid var(--cor-borda); text-align: left; }
+th { background: #e8eef4; }
+@media (max-width: 600px) {
+  header { padding: 12px; }
+  main { width: 96%; }
+  table { font-size: 12px; }
+}

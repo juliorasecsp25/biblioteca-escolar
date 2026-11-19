@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administração - Biblioteca</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>Painel da biblioteca</h1>
+  <button id="sair" class="secundario">Sair</button>
+</header>
+<main>
+  <p id="aviso" class="mensagem">Verificando usuário...</p>
+ 
+  <section>
+    <h2>Livros</h2>
+    <form id="form-livro">
+      <input type="hidden" id="livro-id">
+      <label for="titulo">Título</label><input id="titulo" required>
+      <label for="descricao">Descrição</label><textarea id="descricao"></textarea>
+      <label for="ano">Ano de publicação</label><input id="ano" type="number" min="0">
+      <label for="quantidade">Quantidade de exemplares</label><input id="quantidade" type="number" min="0" value="1" required>
+      <label><input id="livro-ativo" type="checkbox" checked> Livro ativo no catálogo</label>
+      <label for="autor">Autor</label><select id="autor" required></select>
+      <label for="assunto">Assunto</label><select id="assunto" required></select>
+      <button type="submit">Salvar livro</button>
+      <button type="button" id="limpar-livro" class="secundario">Limpar formulário</button>
+    </form>
+    <div id="lista-admin-livros"></div>
+  </section>
+ 
+  <section>
+    <h2>Autores</h2>
+    <form id="form-autor"><input type="hidden" id="autor-id">
+      <label for="nome-autor">Nome do autor</label><input id="nome-autor" required>
+      <button type="submit">Salvar autor</button>
+    </form>
+    <div id="lista-autores"></div>
+  </section>
+ 
+  <section>
+    <h2>Assuntos</h2>
+    <form id="form-assunto"><input type="hidden" id="assunto-id">
+      <label for="nome-assunto">Nome do assunto</label><input id="nome-assunto" required>
+      <button type="submit">Salvar assunto</button>
+    </form>
+    <div id="lista-assuntos"></div>
+  </section>
+ 
+  <section>
+    <h2>Alunos</h2>
+    <form id="form-aluno"><input type="hidden" id="aluno-id">
+      <label for="ra">RA</label><input id="ra" required>
+      <label for="nome-aluno">Nome completo</label><input id="nome-aluno" required>
+      <label for="email-aluno">E-mail</label><input id="email-aluno" type="email">
+      <label for="turma">Turma</label><input id="turma" required>
+      <label><input id="aluno-ativo" type="checkbox" checked> Cadastro ativo</label>
+      <button type="submit">Salvar aluno</button>
+    </form>
+    <div id="lista-alunos"></div>
+  </section>
+ 
+  <section>
+    <h2>Registrar empréstimo</h2>
+    <form id="form-emprestimo">
+      <label for="aluno-emprestimo">Aluno</label><select id="aluno-emprestimo" required></select>
+      <label for="livro-emprestimo">Livro</label><select id="livro-emprestimo" required></select>
+      <label for="data-prevista">Previsão de devolução</label><input id="data-prevista" type="date" required>
+      <label for="observacoes">Observações</label><textarea id="observacoes"></textarea>
+      <button type="submit">Registrar empréstimo</button>
+    </form>
+    <div id="lista-emprestimos"></div>
+  </section>
+ 
+  <section>
+    <h2>Relatório</h2>
+    <p>Empréstimos que ainda não foram devolvidos e empréstimos em atraso.</p>
+    <div id="relatorio"></div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

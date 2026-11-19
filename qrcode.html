@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerar QR Code do catálogo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><h1>QR Code do catálogo público</h1></header>
+<main>
+  <section>
+    <p>Depois da publicação, cole abaixo o endereço da página principal da biblioteca.</p>
+    <label for="endereco">Endereço público do catálogo</label>
+    <input id="endereco" type="url" placeholder="https://seu-site.vercel.app" required>
+    <button id="gerar">Gerar QR Code</button>
+    <div id="codigo" style="margin:20px 0"></div>
+    <button id="baixar" class="secundario">Baixar imagem PNG</button>
+  </section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="js/qrcode.js"></script>
+</body>
+</html>
